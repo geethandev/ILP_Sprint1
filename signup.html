@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+        input, textarea, button {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .success {
+            color: green;
+            text-align: center;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: block;
+        }
+        #acknowledgment {
+            text-align: center;
+        }
+        #acknowledgment p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Registration</h1>
+        <form id="registrationForm">
+            <label for="customerName">Customer Name:</label>
+            <input type="text" id="customerName" name="customerName" maxlength="50">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" maxlength="30">
+            
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" maxlength="100"></textarea>
+            
+            <label for="contactNumber">Contact Number:</label>
+            <input type="text" id="contactNumber" name="contactNumber" maxlength="10">
+            
+            <button type="button" onclick="register()">Register</button>
+        </form>
+        
+        <div id="acknowledgment" style="display: none;">
+            <p class="success">Customer Registration successful.</p>
+            <p>Customer ID: <span id="customerId"></span></p>
+            <p>Customer Name: <span id="ackCustomerName"></span></p>
+            <p>Email: <span id="ackEmail"></span></p>
+        </div>
+    </div>
+
+    <script src="validation.js"></script>
+</body>
+</html>
